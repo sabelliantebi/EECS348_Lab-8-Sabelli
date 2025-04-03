@@ -17,6 +17,11 @@ int main(int argc, char *argv[]) {
     int N;
     file >> N; //read the matrix size from the file
 
+    if (N <= 0) {
+        std::cerr << "Invalid matrix size \n"; //check for bad sizes
+        return 1; //exit if N is not valid
+    }
+
     //create two 2D vectors to store the martices
     std::vector<std::vector<int> > matrix1(N, std::vector<int>(N));
     std::vector<std::vector<int> > matrix2(N, std::vector<int>(N));
